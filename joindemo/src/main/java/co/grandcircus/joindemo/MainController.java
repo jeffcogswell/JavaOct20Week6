@@ -31,6 +31,14 @@ public class MainController {
 		model.addAttribute("employee", emp);
 		return "employee";
 	}
+	
+	@PostMapping("/employee/search")
+	public String search(String lastname, Model model) {
+		List<Employee> emps = erep.findByLastnameContaining(lastname);
+		System.out.println(emps);
+		model.addAttribute("employees", emps);
+		return "searchresults";
+	}
 }
 
 

@@ -17,5 +17,11 @@
 		</c:forEach>
 	</c:forEach>
 	
+	<h1>Search by Last Name</h1>
+	<form method="post" action="/employee/search">
+		Last Name contains: <input type="text" name="lastname" /><br />
+		<input type="submit" />
+	</form>
+	
 </body>
 </html>
