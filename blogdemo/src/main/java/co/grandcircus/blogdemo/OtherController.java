@@ -1,5 +1,8 @@
 package co.grandcircus.blogdemo;
 
-public class OtherController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class OtherController {
+	//@GetMapping()
 }
