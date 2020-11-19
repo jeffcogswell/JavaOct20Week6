@@ -41,7 +41,7 @@ public class MainController {
 		else {
 			if (user.getPassword().compareTo(password) == 0) {
 				session.setAttribute("user", user);
-				return "redirect:/test";
+				return "redirect:/profile";
 			}
 			else {
 				return "fail";
@@ -50,8 +50,8 @@ public class MainController {
 		
 	}
 	
-	@GetMapping("/test")
-	public String test(Model model) {
+	@GetMapping("/profile")
+	public String profile(Model model) {
 		User user = (User)session.getAttribute("user");
 		if (user == null) {
 			return "redirect:/";
@@ -60,7 +60,7 @@ public class MainController {
 		
 		List<Favorites> favs = frep.findByUsername(user.getUsername());
 		model.addAttribute("favs", favs);
-		return "test";
+		return "profile";
 	}
 	
 	@GetMapping("/logout")
